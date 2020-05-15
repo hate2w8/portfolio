@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <title>Golden</title>
+</head>
+<body>
+
+   <!--Sprite-->
+
+<svg style="display: none;">
+<symbol id="twitter" viewBox="0 0 24 24">
+    <path d="m21.534 7.113c.976-.693 1.797-1.558 2.466-2.554v-.001c-.893.391-1.843.651-2.835.777 1.02-.609 1.799-1.566 2.165-2.719-.951.567-2.001.967-3.12 1.191-.903-.962-2.19-1.557-3.594-1.557-2.724 0-4.917 2.211-4.917 4.921 0 .39.033.765.114 1.122-4.09-.2-7.71-2.16-10.142-5.147-.424.737-.674 1.58-.674 2.487 0 1.704.877 3.214 2.186 4.089-.791-.015-1.566-.245-2.223-.606v.054c0 2.391 1.705 4.377 3.942 4.835-.401.11-.837.162-1.29.162-.315 0-.633-.018-.931-.084.637 1.948 2.447 3.381 4.597 3.428-1.674 1.309-3.8 2.098-6.101 2.098-.403 0-.79-.018-1.177-.067 2.18 1.405 4.762 2.208 7.548 2.208 8.683 0 14.342-7.244 13.986-14.637z"/>
+</symbol>
+
+<symbol id="facebook" viewBox="0 0 24 24">
+    <path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>
+</symbol>
+
+<symbol id="pinterest" viewBox="-62 0 512 512">
+    <path d="m60.945312 278.21875c.640626-1.597656 7.050782-26.230469 7.5-27.898438-10.007812-15.058593-21.125-64.371093-12.597656-104.398437 9.199219-58.730469 71.4375-87.601563 130.199219-87.601563v-.109374c73.570313.046874 128.640625 40.980468 128.699219 111.476562.046875 55.179688-33.195313 128.117188-89.957032 128.117188-.015624 0-.027343 0-.042968 0-20.257813 0-45.90625-9.1875-52.632813-18.210938-7.761719-10.398438-9.667969-23.230469-5.566406-36.941406 10.050781-32.082032 22.867187-70.511719 24.363281-96.136719 1.386719-24.183594-15.773437-39.917969-38.027344-39.917969-16.746093 0-38.496093 9.726563-49.335937 37.058594-8.953125 22.707031-8.761719 46.480469.585937 72.671875 3.644532 10.238281-16.15625 76.984375-22.5 98.71875-15.761718 53.992187-37.339843 122.304687-32.726562 160.347656l4.453125 36.605469 22.367187-29.3125c30.953126-40.519531 62.957032-145.332031 71.484376-170.835938 25.210937 32.648438 77.710937 33.585938 83.832031 33.585938 75.183593 0 160.4375-74.65625 158.019531-178.5625-2.121094-91.121094-68.808594-166.875-188.632812-166.875v.117188c-113.976563 0-180.5 60.835937-196.785157 137.703124-14.914062 71.273438 18.253907 125.519532 57.300781 140.398438zm0 0"/>
+</symbol>
+
+<symbol id="google" viewBox="0 0 96.669 96.669">
+    <g>
+        <path d="M50.91,55.189l-4.533-3.522c-1.38-1.144-3.27-2.656-3.27-5.422c0-2.778,1.889-4.544,3.527-6.18
+            c5.279-4.157,10.557-8.581,10.557-17.903c0-9.586-6.031-14.629-8.923-17.022h7.795L64.244,0H39.459
+            C32.658,0,22.856,1.608,15.68,7.533c-5.408,4.666-8.046,11.099-8.046,16.892c0,9.831,7.548,19.798,20.88,19.798
+            c1.259,0,2.636-0.124,4.022-0.252c-0.623,1.515-1.252,2.777-1.252,4.917c0,3.905,2.006,6.299,3.774,8.567
+            c-5.663,0.39-16.237,1.018-24.033,5.809c-7.424,4.415-9.684,10.84-9.684,15.377c0,9.334,8.8,18.028,27.045,18.028
+            c21.636,0,33.089-11.971,33.089-23.823C61.477,64.139,56.447,59.854,50.91,55.189z M34.431,40.691
+            c-10.824,0-15.727-13.992-15.727-22.434c0-3.288,0.623-6.682,2.763-9.333C23.486,6.4,27,4.762,30.281,4.762
+            c10.434,0,15.846,14.118,15.846,23.197c0,2.271-0.251,6.296-3.144,9.207C40.96,39.187,37.574,40.691,34.431,40.691z
+             M34.555,91.387c-13.46,0-22.139-6.438-22.139-15.392c0-8.949,8.048-11.978,10.816-12.979c5.281-1.777,12.076-2.024,13.21-2.024
+            c1.258,0,1.887,0,2.889,0.126c9.568,6.81,13.721,10.203,13.721,16.65C53.053,85.573,46.635,91.387,34.555,91.387z"/>
+        <polygon points="82.679,40.499 82.679,27.894 76.455,27.894 76.455,40.499 63.869,40.499 63.869,46.793 76.455,46.793
+            76.455,59.477 82.679,59.477 82.679,46.793 95.328,46.793 95.328,40.499         "/>
+    </g>
+</symbol>
+</svg>
+
+<div class="page">
+
+   <!--Header-->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-logo">
+                    <img src="img/Logos/Logo.png"  alt="">
+                </div>
+                <nav class="nav">
+                    <a class="nav-link" href="">Home</a>
+                    <a class="nav-link" href="#services" >Services</a>
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                    <a class="nav-link" href="#timeline">About</a>
+                    <a class="nav-link" href="#contacts">Contact</a>
+                </nav>
+                <div class="hamburger">
+                  <span class="hamburger-line"></span>
+                  <span class="hamburger-line"></span>
+                  <span class="hamburger-line"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--Intro-->
+    <div class="intro">
+        <div class="container">
+            <h2 class="intro-subtitle">Welcome To Our Studio!</h2>
+            <h1 class="intro-title">It’s nice to Meet you</h1>
+            <a class="btn" href="">Tell Me More</a>
+        </div>
+    </div>
+
+    <!--Services-->
+    <section class="section">
+       <div class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">SERVICES</h2>
+                    <h3 class="section-subtitle">Proin iaculis purus consequat sem cure.</h3>
+                </div>
+                 <div class="services-row">
+                    <div class="services-item">
+                        <div class="img">
+                            <img src="img/icons/servicesicon1.svg" alt="">
+                        </div>
+                        <div class="services-item-name name">E-Commerce</div>
+                        <div class="services-text text">
+                            <p>Proin iaculis purus consequat sem cure
+                                digni ssim. Donec porttitora entum suscipit
+                                aenean rhoncus posuere odio in tincidunt.</p>
+                        </div>
+                    </div>
+                    <div class="services-item">
+                        <div class="img">
+                            <img src="img/icons/servicesicon2.svg" alt="">
+                        </div>
+                        <div class="services-item-name name">Responsive Web</div>
+                        <div class="services-text text">
+                            <p>Proin iaculis purus consequat sem cure
+                                digni ssim. Donec porttitora entum suscipit
+                                aenean rhoncus posuere odio in tincidunt.</p>
+                        </div>
+                    </div>
+                    <div class="services-item">
+                        <div class="img">
+                            <img src="img/icons/servicesicon3.svg" alt="">
+                        </div>
+                        <div class="services-item-name name">Web Security</div>
+                        <div class="services-text text">
+                            <p>Proin iaculis purus consequat sem cure
+                                digni ssim. Donec porttitora entum suscipit
+                                aenean rhoncus posuere odio in tincidunt.</p>
+                        </div>
+                    </div>
+                </div><!--/.services-row-->
+            </div><!--/.container-->
+        </div><!--/.services-->
+    </section>
+
+        <!--Portfolio-->
+        <div class="section-gray">
+            <div class="portfolio" id="portfolio">
+                <div class="container">
+                     <div class="section-header">
+                    <h2 class="section-title">Our portfolio</h2>
+                    <h3 class="section-subtitle">Proin iaculis purus consequat sem cure.</h3>
+                </div>
+                    <div class="portfolio-row">
+                        <div class="portfolio-item">
+                            <div class="portfolio-card">
+                                <div class="folio-img">
+                                    <img src="img/Portfolio/folio1.jpg" alt="">
+                                </div>
+                                <div class="portfolio-name">Ebony & Ivory</div>
+                                <div class="portfolio-text text">Branding</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-card">
+                                <div class="folio-img">
+                                    <img src="img/Portfolio/folio2.jpg" alt="">
+                                </div>
+                                <div class="portfolio-name">Smart Stationary</div>
+                                <div class="portfolio-text text">Print Design</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-card">
+                                <div class="folio-img">
+                                    <img src="img/Portfolio/folio3.jpg" alt="">
+                                </div>
+                                <div class="portfolio-name">Clever Poster</div>
+                                <div class="portfolio-text text">Print Design</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-card">
+                                <div class="folio-img">
+                                    <img src="img/Portfolio/folio4.jpg" alt="">
+                                </div>
+                                <div class="portfolio-name">Vinyl Record</div>
+                                <div class="portfolio-text text">Product Mock-Up</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-card">
+                                <div class="folio-img">
+                                    <img src="img/Portfolio/folio5.jpg" alt="">
+                                </div>
+                                <div class="portfolio-name">Treehouse Template</div>
+                                <div class="portfolio-text text">Web Design</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-card">
+                                <div class="folio-img">
+                                    <img src="img/Portfolio/folio6.jpg" alt="">
+                                </div>
+                                <div class="portfolio-name name">Burned Logo</div>
+                                <div class="portfolio-text text">Branding</div>
+                            </div>
+                        </div>
+                    </div><!--/.portfolio-row-->
+                </div><!--/.container-->
+            </div><!--/.portfolio-->
+        </div><!--/.section-gray-->
+
+
+    <!--Timeline-->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" id="timeline">
+                <h2 class="section-title">About us</h2>
+                <h3 class="section-subtitle">Proin iaculis purus consequat sem cure. </h3>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam sunt iste ipsam facilis quae rem veritatis fugit ducimus eos, autem repellat eius reprehenderit magni vel ab neque quod natus eveniet.</p>
+                    </div>
+                    <div class="timeline-photo">
+                        <img class="aboutimg" src="img/About/about1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam sunt iste ipsam facilis quae rem veritatis fugit ducimus eos, autem repellat eius reprehenderit magni vel ab neque quod natus eveniet.</p>
+                    </div>
+                    <div class="timeline-photo">
+                        <img src="img/About/about2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam sunt iste ipsam facilis quae rem veritatis fugit ducimus eos, autem repellat eius reprehenderit magni vel ab neque quod natus eveniet.</p>
+                    </div>
+                    <div class="timeline-photo">
+                        <img src="img/About/about3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam sunt iste ipsam facilis quae rem veritatis fugit ducimus eos, autem repellat eius reprehenderit magni vel ab neque quod natus eveniet.</p>
+                    </div>
+                    <div class="timeline-photo">
+                        <img src="img/About/about4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-photo timeline-text ">
+                        <div class="aa">Our Story Continues...</div>
+                    </div>
+                </div>
+            </div><!--/.timeline-->
+        </div><!--/.cpntainer-->
+    </section>
+
+
+    <!--Team-->
+    <section class="section-gray">
+        <div class="team">
+            <div class="container">
+                 <div class="section-header">
+                    <h2 class="section-title">OUR AMAZING TEAM</h2>
+                    <h3 class="section-subtitle">Proin iaculis purus consequat sem cure.</h3>
+                </div>
+                <div class="team-row">
+                   <div class="team-item">
+                        <div class="team-photo">
+                            <img src="img/Team/team1.png" alt="">
+                        </div>
+                        <div class="team-name">Kimberly Thompson</div>
+                        <div class="team-text">Marketer</div>
+                        <div class="team-social">
+                            <a class="social-icon blue" href="#" target="_blank">
+                            <svg class="twitter">
+                                <use xlink:href="#twitter"></use>
+                            </svg>
+                        </a>
+                        <a class="social-icon darkblue" href="#" target="_blank">
+                            <svg class="facebook">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a class="social-icon red" href="#" target="_blank">
+                            <svg class="pinterest">
+                                <use xlink:href="#pinterest"></use>
+                            </svg>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="team-item">
+                        <div class="team-photo">
+                            <img src="img/Team/team1.png" alt="">
+                        </div>
+                        <div class="team-name">Kimberly Thompson</div>
+                        <div class="team-text">Marketer</div>
+                        <div class="team-social">
+                            <a class="social-icon blue" href="#" target="_blank">
+                                <svg class="twitter">
+                                    <use xlink:href="#twitter"></use>
+                                </svg>
+                            </a>
+                        <a class="social-icon darkblue" href="#" target="_blank">
+                            <svg class="facebook">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a class="social-icon red" href="#" target="_blank">
+                            <svg class="pinterest">
+                                <use xlink:href="#pinterest"></use>
+                            </svg>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="team-item">
+                        <div class="team-photo">
+                            <img src="img/Team/team1.png" alt="">
+                        </div>
+                        <div class="team-name">Kimberly Thompson</div>
+                        <div class="team-text">Marketer</div>
+                        <div class="team-social">
+                            <a class="social-icon darkblue" href="#" target="_blank">
+                                <svg class="facebook">
+                                    <use xlink:href="#facebook"></use>
+                                </svg>
+                            </a>
+                            <a class="social-icon red" href="#" target="_blank">
+                                <svg class="pinterest">
+                                    <use xlink:href="#pinterest"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div><!--/.team-row-->
+                <div class="team-text">
+                    <p>Proin iaculis purus consequat sem cure  digni ssim donec porttitora entum suscipit <br>
+                        aenean rhoncus posuere odio in tincidunt proin iaculis.</p>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.team-->
+    </section>
+
+
+    <!--Logos-->
+    <section class="section-logo">
+        <div class="container">
+           <div class="logos-inner">
+                <div class="logos-item">
+                    <img src="img/Logos/Envato.svg" alt="">
+                </div>
+                <div class="logos-item">
+                    <img src="img/Logos/WordPress.svg" alt="">
+                </div>
+                <div class="logos-item">
+                    <img src="img/Logos/Tuts.svg" alt="">
+                </div>
+                <div class="logos-item">
+                    <img src="img/Logos/Microlancercopy.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Contact us-->
+    <div class="contacts" id="contacts">
+        <div class="container">
+            <div class="contacts-header">
+                <h2 class="contacts-title">CONTACT US</h2>
+                <h3 class="contacts-subtitle">Proin iaculis purus consequat sem cure. </h3>
+            </div>
+            <form class="form" action="/" method="post">
+                <div class="colums">
+                    <div class="colums-item">
+                        <input class="input" type="text" placeholder="YOUR NAME *">
+                        <input class="input" type="email" placeholder="YOUR E-MAIL *">
+                        <input class="input" type="text" placeholder="SUBJECT">
+                    </div>
+                    <div class="colums-item">
+                        <textarea class="textarea" name="text" placeholder="YOUR MESSAGE *" ></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-form">SEND MESSAGE</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!--Footer-->
+    <footer class="footer">
+       <div class="container">
+            <div class="footer-inner">
+                <div class="footer-item">
+                    <div class="footer-copyright">&copy;Copyright 2014 FreebiesXpress.com</div>
+                </div>
+                <div class="footer-item">
+                    <div class="footer-social">
+
+                     <a class="social-icon blue" href="#" target="_blank">
+                         <svg class="twitter">
+                            <use xlink:href="#twitter"></use>
+                         </svg>
+                     </a>
+
+                     <a class="social-icon darkblue" href="#" target="_blank">
+                         <svg class="facebook">
+                            <use xlink:href="#facebook"></use>
+                         </svg>
+                     </a>
+
+                     <a class="social-icon red" href="#" target="_blank">
+                         <svg class="pinterest">
+                            <use xlink:href="#pinterest"></use>
+                         </svg>
+                     </a>
+                     <a class="social-icon red" href="#" target="_blank">
+                         <svg class="pinterest">
+                            <use xlink:href="#google"></use>
+                         </svg>
+                     </a>
+                    </div>
+                </div>
+            </div><!--/.footer-inner-->
+        </div><!--/.container-->
+    </footer><!--/.footer-->
+</div><!--/.page-->
+</body>
+</html>
